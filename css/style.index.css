@@ -1,0 +1,20 @@
+/* Estilos para el carrusel */
+.carousel-item img {
+    height: 400px; /* Altura deseada para las imágenes del carrusel */
+    object-fit: cover; /* Ajusta la imagen al tamaño del contenedor */
+}
+
+/* Estilos para las tarjetas de juegos */
+.card {
+    width: 18rem; /* Ancho deseado para las tarjetas */
+    margin: 0 auto; /* Centra las tarjetas horizontalmente */
+    margin-bottom: 20px; /* Espacio entre tarjetas */
+}
+
+.card-title {
+    font-size: 1.25rem; /* Tamaño del título */
+}
+
+.card-text {
+    font-size: 1rem; /* Tamaño del texto */
+}
