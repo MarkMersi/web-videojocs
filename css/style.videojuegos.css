@@ -1,0 +1,164 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav-item {
+    padding-right: 32px;
+}
+
+.navbar-brand img {
+    width: 192px;
+    height: 96px;
+    padding-bottom: 12px;
+}
+
+.flex-game {
+    padding-top: 44px;
+    width: 65vw;
+    margin: auto;
+    display: flex;
+    overflow: hidden;
+    flex-flow: row wrap;
+}
+
+.game-card {
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.game-cover {
+    flex: 1 50%;
+    text-align: center;
+}
+
+.game-cover img {
+    width: 480px;
+    height: 640px;
+}
+
+.game-details {
+    flex: 1 50%;
+    padding: 20px;
+}
+
+.game-details h2 {
+    font-weight: 600;
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
+.game-description {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 16px;
+}
+
+.price-and-options {
+    margin-top: 20px;
+}
+
+.game-price {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.quantity, .editions {
+    margin-bottom: 10px;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+}
+
+.quantity label {
+    margin-right: 10px;
+}
+
+.quantity input {
+    width: 50px; /* Ancho del input */
+    margin-right: 10px;
+    }
+
+.quantity button {
+    background-color: rgb(110, 110, 110)f;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    width: 30px; /* Ancho de los botones */
+    height: 30px; /* Altura de los botones */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+
+.quantity button:hover {
+    background-color: rgb(87, 87, 87);
+}
+
+
+
+.btn-primary {
+    font-size: 20px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    background-color: rgb(110, 110, 110);
+    border: none;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: rgb(87, 87, 87);
+}
+
+
+/* Estilos para dispositivos móviles */
+@media only screen and (max-width: 767px) {
+    .navbar-brand img {
+        width: 150px; /* Reducir el tamaño del logo para dispositivos móviles */
+        height: auto; /* Permitir que la altura se ajuste automáticamente */
+    }
+
+    .flex-game {
+        width: 100%; /* Ajustar el ancho al 100% para ocupar todo el espacio disponible */
+        padding: 20px; /* Agregar un poco de espacio alrededor del contenedor */
+    }
+
+    .game-card {
+        flex-direction: column; /* Cambiar la dirección del flex a columna para apilar los elementos */
+    }
+
+    .game-cover img {
+        width: 100%; /* Hacer que la imagen de la portada ocupe todo el ancho disponible */
+        height: auto; /* Permitir que la altura se ajuste automáticamente */
+    }
+
+    .game-details {
+        padding: 20px; /* Ajustar el espaciado interior */
+    }
+
+    .game-details h2 {
+        font-size: 24px; /* Reducir el tamaño del título */
+    }
+
+    .game-description {
+        font-size: 14px; /* Reducir el tamaño del texto de descripción */
+    }
+
+    .btn-primary {
+        padding: 10px 20px; /* Reducir el padding del botón */
+    }
+}
+
+/* Estilos para pantallas grandes */
+@media only screen and (max-width: 1450px) {
+    /* Puedes agregar estilos específicos para pantallas grandes aquí si es necesario */
+    .game-card{
+        flex-direction: column;
+    }
+}

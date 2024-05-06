@@ -13,20 +13,14 @@ body {
 
 .banner {
     width: 192px;
-
 }
 
-.logo-container {
-    width: 100%;
-    margin: auto;
-    text-align: center;
-    background-color: #f8f9fa;
-    img {
-        width: 256px;
-        height: 256px;
-        padding-bottom: 12px;
-    }
+img {
+    width: 192px;
+    height: 92px;
+    padding-bottom: 12px;
 }
+
 
 /* Estilos para el carrusel */
 .carousel-item img {

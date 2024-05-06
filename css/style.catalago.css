@@ -1,0 +1,104 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav-item {
+    padding-right: 32px;
+}
+
+.navbar-brand {
+    img {
+        width: 192px;
+        height: 96px;
+        padding-bottom: 12px;
+        padding-top: 6px;
+    }
+}
+
+.carousel-inner {
+    img {
+        width: auto;
+        height: 680px;
+    }
+}
+
+
+.card-group {
+    img {
+        width: 432px;
+        height: 560px;
+    }
+}
+
+body {
+    margin-bottom: 22px;
+}
+/* Para pantallas más pequeñas que 992px */
+@media (max-width: 992px) {
+    .navbar-brand img {
+        width: 160px; /* Reducir el tamaño del logo */
+        height: auto;
+        padding-bottom: 8px; /* Ajustar el padding del logo */
+        padding-top: 4px;
+    }
+
+    .nav-item {
+        padding-right: 16px; /* Reducir el espaciado entre elementos del navbar */
+    }
+
+    .carousel-inner img {
+        height: 480px; /* Ajustar la altura del carrusel */
+    }
+
+    .card-group img {
+        width: 100%; /* Ajustar el ancho de las imágenes de las tarjetas */
+        height: auto;
+    }
+}
+
+/* Para pantallas más pequeñas que 768px */
+@media (max-width: 768px) {
+    .navbar-brand img {
+        width: 120px; /* Reducir el tamaño del logo */
+        height: auto;
+        padding-bottom: 6px; /* Ajustar el padding del logo */
+        padding-top: 3px;
+    }
+
+    .nav-item {
+        padding-right: 8px; /* Reducir el espaciado entre elementos del navbar */
+    }
+
+    .carousel-inner img {
+        height: 380px; /* Ajustar la altura del carrusel */
+    }
+
+    .card-group img {
+        width: 100%; /* Ajustar el ancho de las imágenes de las tarjetas */
+        height: auto;
+    }
+}
+
+/* Para pantallas más pequeñas que 576px */
+@media (max-width: 576px) {
+    .navbar-brand img {
+        width: 100px; /* Reducir el tamaño del logo */
+        height: auto;
+        padding-bottom: 4px; /* Ajustar el padding del logo */
+        padding-top: 2px;
+    }
+
+    .nav-item {
+        padding-right: 4px; /* Reducir el espaciado entre elementos del navbar */
+    }
+
+    .carousel-inner img {
+        height: 280px; /* Ajustar la altura del carrusel */
+    }
+
+    .card-group img {
+        width: 100%; /* Ajustar el ancho de las imágenes de las tarjetas */
+        height: auto;
+    }
+}

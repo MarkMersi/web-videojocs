@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Theft Auto V (GTA V)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../css/style.videojuegos.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../../index.html"><img class="banner" src="../../img/logo/elytrix-banner.png"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../view/contenido/catalogo.html">Catalogo</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Sobre nosotros
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../../view/sobre_nosotros/contact.html">Contactanos</a></li>
+                                <li><a class="dropdown-item" href="../../view/sobre_nosotros/help.html">Ayuda</a></li>
+                                <li><a class="dropdown-item" href="../../view/sobre_nosotros/faq.html">Preguntas frecuentes</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="flex-game">
+        <div class="game-card">
+            <div class="game-cover">
+                <img src="../../img/juegos/gta_v.jpg"> <!-- Actualiza la ruta de la imagen por la del juego "GTA V" -->
+            </div>
+            <div class="game-details">
+                <h2>Grand Theft Auto V (GTA V)</h2> <!-- Actualiza el título del juego -->
+                <p class="game-description">Grand Theft Auto V (GTA V) es un juego de acción y aventura desarrollado por Rockstar North y publicado por Rockstar Games. Es la quinta entrega principal de la serie Grand Theft Auto y sigue a tres criminales, Franklin, Michael y Trevor, mientras planean y ejecutan una serie de robos y otros delitos en el mundo abierto ficticio de San Andreas.</p> <!-- Actualiza la descripción del juego -->
+                <div class="price-and-options">
+                    <p class="game-price">$14.99</p> <!-- Actualiza el precio si es necesario -->
+                    <div class="quantity">
+                        <label for="copies">Copias:</label>
+                        <button type="button" class="btn btn-secondary btn-minus">-</button>
+                        <input type="number" id="copies" name="copies" value="1" min="1" max="99" readonly>
+                        <button type="button" class="btn btn-secondary btn-plus">+</button>
+                    </div>
+                    
+                    
+                    <div class="editions">
+                        <label for="editions">Ediciones:</label>
+                        <select id="editions" name="editions">
+                            <option value="standard">Standard</option>
+                            <option value="deluxe">Deluxe</option>
+                            <option value="collectors">Collector's</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn btn-primary">Comprar</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../../js/overlay_buy.js"></script>
+</html>

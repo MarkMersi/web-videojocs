@@ -1,14 +1,14 @@
-var currentPage = 1; // Página actual
+var currentPage = 0; // Página actual (comenzamos desde 0 para que la numeración coincida con el índice de los catálogos)
 var catalogs = [
     [
-        { title: "Game Title 1", description: "Description of the game 1", imageUrl: "../../img/juegos/nier_automata.jpg", pageUrl: "../videojuegos/videojuego1.html" },
-        { title: "Game Title 2", description: "Description of the game 2", imageUrl: "../../img/juegos/gta_v.jpg", pageUrl: "../videojuegos/videojuego2.html" },
-        { title: "Game Title 3", description: "Description of the game 3", imageUrl: "../../img/juegos/rdr2.jpg", pageUrl: "../videojuegos/videojuego3.html" }
+        { title: "Nier Automata", description: "39,99€", imageUrl: "../../img/juegos/nier_automata.jpg", pageUrl: "../videojuegos/Nier_Automata.html" },
+        { title: "Grand Theft Auto V", description: "14,99€", imageUrl: "../../img/juegos/gta_v.jpg", pageUrl: "../videojuegos/GTA_V.html" },
+        { title: "Red Dead Redemption 2", description: "19,99€", imageUrl: "../../img/juegos/rdr2.jpg", pageUrl: "../videojuegos/Red_Dead_Redemption2.html" }
     ],
     [
-        { title: "Game Title 4", description: "Description of the game 4", imageUrl: "../../img/juegos/mgr_revengeance.jpg", pageUrl: "../videojuegos/videojuego4.html" },
-        { title: "Game Title 5", description: "Description of the game 5", imageUrl: "../../img/juegos/dark_souls_2016.jpg", pageUrl: "../videojuegos/videojuego5.html" },
-        { title: "Game Title 6", description: "Description of the game 6", imageUrl: "../../img/juegos/terraria.jpg", pageUrl: "../videojuegos/videojuego6.html" }
+        { title: "Metal Gear Rising Revengance", description: "34,99€", imageUrl: "../../img/juegos/mgr_revengeance.jpg", pageUrl: "../videojuegos/Metal_Gear_Rising_Revengeance.html" },
+        { title: "Dark Souls 2016", description: "35,99€", imageUrl: "../../img/juegos/dark_souls_2016.jpg", pageUrl: "../videojuegos/Dark_Souls_2016.html" },
+        { title: "Terraria", description: "9,99€", imageUrl: "../../img/juegos/terraria.jpg", pageUrl: "../videojuegos/Terraria.html" }
     ]
     // Agrega más catálogos si es necesario
 ];
@@ -17,48 +17,68 @@ var catalogs = [
 function generateGameCards() {
     var gameCardsContainer = document.getElementById('gameCards');
     gameCardsContainer.innerHTML = '';
-    catalogs[currentPage - 1].forEach(function (game) {
+    catalogs[currentPage].forEach(function (game) {
         var card = document.createElement('div');
         card.classList.add('card');
-        card.innerHTML = `
-            <img src="${game.imageUrl}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">${game.title}</h5>
-                <p class="card-text">${game.description}</p>
-                <button class="btn btn-primary next-game-btn">View Details</button>
-            </div>`;
-        gameCardsContainer.appendChild(card);
         
-        // Agrega un evento de clic al botón para navegar a la página correspondiente
-        var nextGameBtn = card.querySelector('.next-game-btn');
-        nextGameBtn.addEventListener('click', function () {
+        var image = document.createElement('img');
+        image.src = game.imageUrl;
+        image.classList.add('card-img-top', 'game-image');
+        image.alt = "...";
+        
+        var cardBody = document.createElement('div');
+        cardBody.classList.add('card-body');
+        
+        var title = document.createElement('h5');
+        title.classList.add('card-title');
+        title.textContent = game.title;
+        
+        var description = document.createElement('p');
+        description.classList.add('card-text');
+        description.textContent = game.description;
+        
+        var button = document.createElement('button');
+        button.classList.add('btn', 'btn-primary', 'redirect-btn');
+        button.textContent = 'Ir al juego';
+        button.addEventListener('click', function () {
             window.location.href = game.pageUrl;
         });
+        
+        cardBody.appendChild(title);
+        cardBody.appendChild(description);
+        cardBody.appendChild(button);
+        
+        card.appendChild(image);
+        card.appendChild(cardBody);
+        
+        gameCardsContainer.appendChild(card);
     });
+    
+    // Actualizar el número de página
+    document.getElementById('pageNum').textContent = currentPage + 1;
 }
-
-// Función para actualizar el número de página mostrado
-function updatePageNum() {
-    document.getElementById('pageNum').textContent = currentPage;
-}
-
-// Event listeners para los botones de cambio de página
-document.getElementById('prevPageBtn').addEventListener('click', function () {
-    if (currentPage > 1) {
-        currentPage--;
-        generateGameCards(); // Genera las nuevas tarjetas al cambiar de página
-        updatePageNum();
-    }
-});
-
-document.getElementById('nextPageBtn').addEventListener('click', function () {
-    if (currentPage < catalogs.length) {
-        currentPage++;
-        generateGameCards(); // Genera las nuevas tarjetas al cambiar de página
-        updatePageNum();
-    }
-});
 
 // Genera las tarjetas de juegos para la página inicial
 generateGameCards();
-updatePageNum();
+
+// Función para ir a la siguiente página
+function nextPage() {
+    currentPage++;
+    if (currentPage >= catalogs.length) {
+        currentPage = 0;
+    }
+    generateGameCards();
+}
+
+// Función para ir a la página anterior
+function prevPage() {
+    currentPage--;
+    if (currentPage < 0) {
+        currentPage = catalogs.length - 1;
+    }
+    generateGameCards();
+}
+
+// Asignar eventos a los botones de "Siguiente" y "Anterior"
+document.getElementById('nextPageBtn').addEventListener('click', nextPage);
+document.getElementById('prevPageBtn').addEventListener('click', prevPage);
