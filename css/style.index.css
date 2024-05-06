@@ -1,20 +1,52 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav-item {
+    padding-right: 32px;
+}
+
+body {
+    background-color: #c7c7c7;
+}
+
+.banner {
+    width: 192px;
+
+}
+
+.logo-container {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    background-color: #f8f9fa;
+    img {
+        width: 256px;
+        height: 256px;
+        padding-bottom: 12px;
+    }
+}
+
 /* Estilos para el carrusel */
 .carousel-item img {
     height: 400px; /* Altura deseada para las imágenes del carrusel */
     object-fit: cover; /* Ajusta la imagen al tamaño del contenedor */
 }
 
-/* Estilos para las tarjetas de juegos */
-.card {
-    width: 18rem; /* Ancho deseado para las tarjetas */
-    margin: 0 auto; /* Centra las tarjetas horizontalmente */
-    margin-bottom: 20px; /* Espacio entre tarjetas */
+#maincarousel {
+    width: 95%;
+    margin: auto;
+    padding-top: 24px;
+    img {
+        width: 800px;
+        height: 400px;
+    }
 }
 
-.card-title {
-    font-size: 1.25rem; /* Tamaño del título */
-}
-
-.card-text {
-    font-size: 1rem; /* Tamaño del texto */
+.wrapper {
+    width: 65vw;
+    height: 100vw;
+    margin: auto;
+    background-color: #fff;
 }

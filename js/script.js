@@ -1,14 +1,14 @@
 var currentPage = 1; // Página actual
 var catalogs = [
     [
-        { title: "Game Title 1", description: "Description of the game 1", imageUrl: "https://via.placeholder.com/150", pageUrl: "../videojuegos/videojuego1.html" },
-        { title: "Game Title 2", description: "Description of the game 2", imageUrl: "https://via.placeholder.com/150", pageUrl: "../videojuegos/videojuego2.html" },
-        { title: "Game Title 3", description: "Description of the game 3", imageUrl: "https://via.placeholder.com/150", pageUrl: "../videojuegos/videojuego3.html" }
+        { title: "Game Title 1", description: "Description of the game 1", imageUrl: "../../img/juegos/nier_automata.jpg", pageUrl: "../videojuegos/videojuego1.html" },
+        { title: "Game Title 2", description: "Description of the game 2", imageUrl: "../../img/juegos/gta_v.jpg", pageUrl: "../videojuegos/videojuego2.html" },
+        { title: "Game Title 3", description: "Description of the game 3", imageUrl: "../../img/juegos/rdr2.jpg", pageUrl: "../videojuegos/videojuego3.html" }
     ],
     [
-        { title: "Game Title 4", description: "Description of the game 4", imageUrl: "https://via.placeholder.com/150", pageUrl: "../videojuegos/videojuego4.html" },
-        { title: "Game Title 5", description: "Description of the game 5", imageUrl: "https://via.placeholder.com/150", pageUrl: "../videojuegos/videojuego5.html" },
-        { title: "Game Title 6", description: "Description of the game 6", imageUrl: "https://via.placeholder.com/150", pageUrl: "../videojuegos/videojuego6.html" }
+        { title: "Game Title 4", description: "Description of the game 4", imageUrl: "../../img/juegos/mgr_revengeance.jpg", pageUrl: "../videojuegos/videojuego4.html" },
+        { title: "Game Title 5", description: "Description of the game 5", imageUrl: "../../img/juegos/dark_souls_2016.jpg", pageUrl: "../videojuegos/videojuego5.html" },
+        { title: "Game Title 6", description: "Description of the game 6", imageUrl: "../../img/juegos/terraria.jpg", pageUrl: "../videojuegos/videojuego6.html" }
     ]
     // Agrega más catálogos si es necesario
 ];
