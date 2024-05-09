@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: #c7c7c7;
+    background-color: #fff;
 }
 
 .banner {
@@ -21,26 +21,56 @@ img {
     padding-bottom: 12px;
 }
 
-
-/* Estilos para el carrusel */
-.carousel-item img {
-    height: 400px; /* Altura deseada para las imágenes del carrusel */
-    object-fit: cover; /* Ajusta la imagen al tamaño del contenedor */
-}
-
 #maincarousel {
-    width: 95%;
+    width: 65%;
     margin: auto;
     padding-top: 24px;
     img {
-        width: 800px;
-        height: 400px;
+        width: 600px;
+        height: auto;
+        object-fit: cover;
+        max-width: 100%;
+        max-height: 100vh;
     }
 }
 
-.wrapper {
-    width: 65vw;
-    height: 100vw;
+.wrapper h2 {
+    font-weight: 700;
+    font-size: 52px; 
+    text-align: center;
+    padding-top: 22px;
+}
+
+.wrapper h4 {
+    text-align: center;
+    padding-top: 18px;
+    padding-bottom: 22px;
+}
+
+.catalog-btn {
+    display: block;
+    width: max-content;
     margin: auto;
-    background-color: #fff;
+    font-size: 22px;
+    background-color: #343a40;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 30px;
+    padding: 15px 70px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    max-width: 100%;
+    max-height: 100vh;
+}
+
+.catalog-btn:hover {
+    background-color: #495057;
+}
+
+@media only screen and (max-width: 700px){
+    #maincarousel {
+        width: 90%;
+    }
 }

@@ -46,7 +46,7 @@
                 <h2>Grand Theft Auto V (GTA V)</h2> <!-- Actualiza el título del juego -->
                 <p class="game-description">Grand Theft Auto V (GTA V) es un juego de acción y aventura desarrollado por Rockstar North y publicado por Rockstar Games. Es la quinta entrega principal de la serie Grand Theft Auto y sigue a tres criminales, Franklin, Michael y Trevor, mientras planean y ejecutan una serie de robos y otros delitos en el mundo abierto ficticio de San Andreas.</p> <!-- Actualiza la descripción del juego -->
                 <div class="price-and-options">
-                    <p class="game-price">$14.99</p> <!-- Actualiza el precio si es necesario -->
+                    <p id="game-price" class="game-price">$40.00</p> <!-- Actualiza el precio si es necesario -->
                     <div class="quantity">
                         <label for="copies">Copias:</label>
                         <button type="button" class="btn btn-secondary btn-minus">-</button>
@@ -58,16 +58,49 @@
                     <div class="editions">
                         <label for="editions">Ediciones:</label>
                         <select id="editions" name="editions">
-                            <option value="standard">Standard</option>
-                            <option value="deluxe">Deluxe</option>
-                            <option value="collectors">Collector's</option>
+                            <option value="standard" data-price="40€">Original</option>
+                            <option value="collectors" data-price="60€">Special</option>
+                            <option value="collectors" data-price="120€">Collector's</option>
                         </select>
                     </div>
+                    
                 </div>
                 <button class="btn btn-primary">Comprar</button>
             </div>
         </div>
     </div>
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const selectEdition = document.getElementById('editions');
+        const gamePrice = document.getElementById('game-price');
+        const btnMinus = document.querySelector('.btn-minus');
+        const btnPlus = document.querySelector('.btn-plus');
+        const inputCopies = document.querySelector('#copies');
+
+        btnMinus.addEventListener('click', function() {
+            let value = parseInt(inputCopies.value);
+            if (value > 1) {
+                value--;
+                inputCopies.value = value;
+            }
+        });
+
+        btnPlus.addEventListener('click', function() {
+            let value = parseInt(inputCopies.value);
+            if (value < 99) {
+                value++;
+                inputCopies.value = value;
+            }
+        });
+
+        // Agrega un controlador de eventos al cambio de selección
+        selectEdition.addEventListener('change', function() {
+            const selectedOption = selectEdition.options[selectEdition.selectedIndex];
+            const selectedPrice = parseFloat(selectedOption.getAttribute('data-price'));
+            gamePrice.textContent = '$' + selectedPrice.toFixed(2);
+        });
+    });
+</script>
 <script src="../../js/overlay_buy.js"></script>
 </html>

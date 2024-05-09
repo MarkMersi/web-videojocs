@@ -47,7 +47,7 @@
                 <p class="game-description">Mientras el fuego se desvanece y el mundo cae en ruinas, la desarrolladora FROMSOFTWARE  y el director Hidetaka Miyazaki continúan la amada serie de referencia en su género con Dark Souls III. Fans y nuevos jugadores podrán dejarse perder en la jugabilidad distintiva y gráficos inmersivos. Ahora solo quedan las brasas...</p>
                 <p class="game-description">Ambientado en el reino de Lothric, el jugador tiene la tarea de sobrevivir a un apocalipsis que se aproxima, provocado por el conflicto entre la Era del Fuego y aquellos marcados con la Señal oscura, el clásico conflicto dado en las anteriores entregas de la saga. Para sobrevivir en este caso, el personaje del jugador deberá enfrentarse a los Señores de la Ceniza, héroes del pasado que enlazaron la Primera Llama. </p> 
                 <div class="price-and-options">
-                    <p class="game-price">$35.99</p>
+                    <p class="game-price" id="game-price">$35.99</p>
                     <div class="quantity">
                         <label for="copies">Copias:</label>
                         <button type="button" class="btn btn-secondary btn-minus">-</button>
@@ -59,9 +59,10 @@
                     <div class="editions">
                         <label for="editions">Ediciones:</label>
                         <select id="editions" name="editions">
-                            <option value="standard">Standard</option>
-                            <option value="deluxe">Deluxe</option>
-                            <option value="collectors">Collector's</option>
+                            <option value="collectors" data-price="29.99">Standar</option>
+                            <option value="collectors" data-price="59.99">Day One Edition</option>
+                            <option value="collectors" data-price="124,95€">Edición coleccionista</option>
+                            <option value="collectors" data-price="400€">Prestige Edition</option>
                         </select>
                     </div>
                 </div>
@@ -70,5 +71,36 @@
         </div>
     </div>
 </body>
-<script src="../../js/overlay_buy.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const selectEdition = document.getElementById('editions');
+        const gamePrice = document.getElementById('game-price');
+        const btnMinus = document.querySelector('.btn-minus');
+        const btnPlus = document.querySelector('.btn-plus');
+        const inputCopies = document.querySelector('#copies');
+
+        btnMinus.addEventListener('click', function() {
+            let value = parseInt(inputCopies.value);
+            if (value > 1) {
+                value--;
+                inputCopies.value = value;
+            }
+        });
+
+        btnPlus.addEventListener('click', function() {
+            let value = parseInt(inputCopies.value);
+            if (value < 99) {
+                value++;
+                inputCopies.value = value;
+            }
+        });
+
+        // Agrega un controlador de eventos al cambio de selección
+        selectEdition.addEventListener('change', function() {
+            const selectedOption = selectEdition.options[selectEdition.selectedIndex];
+            const selectedPrice = parseFloat(selectedOption.getAttribute('data-price'));
+            gamePrice.textContent = '$' + selectedPrice.toFixed(2);
+        });
+    });
+</script>
 </html>

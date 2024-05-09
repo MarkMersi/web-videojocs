@@ -40,27 +40,24 @@
     <div class="flex-game">
         <div class="game-card">
             <div class="game-cover">
-                <img src="../../img/juegos/rdr2.jpg"> <!-- Actualiza la ruta de la imagen por la del juego "Red Dead Redemption 2" -->
+                <img src="../../img/juegos/rdr2.jpg">
             </div>
             <div class="game-details">
-                <h2>Red Dead Redemption 2</h2> <!-- Actualiza el título del juego -->
-                <p class="game-description">Red Dead Redemption 2 es un juego de acción y aventuras desarrollado y publicado por Rockstar Games. Es la precuela del juego Red Dead Redemption de 2010 y la tercera entrega de la serie Red Dead. La historia sigue a Arthur Morgan, un forajido y miembro de la banda de Van der Linde, mientras lucha por sobrevivir en un mundo abierto ambientado en el Lejano Oeste americano en 1899.</p> <!-- Actualiza la descripción del juego -->
+                <h2>Red Dead Redemption 2</h2>
+                <p class="game-description">Red Dead Redemption 2 es un juego de acción y aventuras desarrollado y publicado por Rockstar Games. Es la precuela del juego Red Dead Redemption de 2010 y la tercera entrega de la serie Red Dead. La historia sigue a Arthur Morgan, un forajido y miembro de la banda de Van der Linde, mientras lucha por sobrevivir en un mundo abierto ambientado en el Lejano Oeste americano en 1899.</p>
                 <div class="price-and-options">
-                    <p class="game-price">$19.99</p> <!-- Actualiza el precio si es necesario -->
+                    <p class="game-price">$59.99</p>
                     <div class="quantity">
                         <label for="copies">Copias:</label>
                         <button type="button" class="btn btn-secondary btn-minus">-</button>
                         <input type="number" id="copies" name="copies" value="1" min="1" max="99" readonly>
                         <button type="button" class="btn btn-secondary btn-plus">+</button>
                     </div>
-                    
-                    
                     <div class="editions">
                         <label for="editions">Ediciones:</label>
                         <select id="editions" name="editions">
-                            <option value="standard">Standard</option>
-                            <option value="deluxe">Deluxe</option>
-                            <option value="ultimate">Ultimate</option>
+                            <option value="standard" data-price="59.99">Standard</option>
+                            <option value="ultimate" data-price="99.99">Ultimate</option>
                         </select>
                     </div>
                 </div>
@@ -69,5 +66,38 @@
         </div>
     </div>
 </body>
-<script src="../../js/overlay_buy.js"></script>
+<script >
+    document.addEventListener('DOMContentLoaded', function() {
+        const selectEdition = document.getElementById('editions');
+        const gamePrice = document.querySelector('.game-price');
+
+        // Agrega un controlador de eventos al cambio de selección
+        selectEdition.addEventListener('change', function() {
+            const selectedOption = selectEdition.options[selectEdition.selectedIndex];
+            const selectedPrice = parseFloat(selectedOption.getAttribute('data-price'));
+            gamePrice.textContent = '$' + selectedPrice.toFixed(2);
+        });
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+    const btnMinus = document.querySelector('.btn-minus');
+    const btnPlus = document.querySelector('.btn-plus');
+    const inputCopies = document.querySelector('#copies');
+
+    btnMinus.addEventListener('click', function() {
+        let value = parseInt(inputCopies.value);
+        if (value > 1) {
+            value--;
+            inputCopies.value = value;
+        }
+    });
+
+    btnPlus.addEventListener('click', function() {
+        let value = parseInt(inputCopies.value);
+        if (value < 99) {
+            value++;
+            inputCopies.value = value;
+        }
+    });
+});
+</script>
 </html>

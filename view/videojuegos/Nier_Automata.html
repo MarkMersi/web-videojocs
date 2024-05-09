@@ -46,7 +46,7 @@
                 <h2>Nier: Automata</h2> <!-- Cambia el título del juego -->
                 <p class="game-description">Nier: Automata es un juego de acción y rol desarrollado por PlatinumGames y publicado por Square Enix. La humanidad ha sido expulsada de la Tierra por seres mecánicos de otro mundo. En un último esfuerzo por recuperar el planeta, la humanidad envía a androides de combate, los YoRHa, a luchar contra los invasores.</p> <!-- Actualiza la descripción del juego -->
                 <div class="price-and-options">
-                    <p class="game-price">$39.99</p> <!-- Actualiza el precio si es necesario -->
+                    <p id="game-price" class="game-price">$39.99</p> <!-- Actualiza el precio si es necesario -->
                     <div class="quantity">
                         <label for="copies">Copias:</label>
                         <button type="button" class="btn btn-secondary btn-minus">-</button>
@@ -58,9 +58,7 @@
                     <div class="editions">
                         <label for="editions">Ediciones:</label>
                         <select id="editions" name="editions">
-                            <option value="standard">Standard</option>
-                            <option value="deluxe">Deluxe</option>
-                            <option value="collectors">Collector's</option>
+                            <option value="standard" data-price="39.99">The End of YoRHa Edition</option>
                         </select>
                     </div>
                 </div>
@@ -69,5 +67,36 @@
         </div>
     </div>
 </body>
-<script src="../../js/overlay_buy.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const selectEdition = document.getElementById('editions');
+        const gamePrice = document.getElementById('game-price');
+        const btnMinus = document.querySelector('.btn-minus');
+        const btnPlus = document.querySelector('.btn-plus');
+        const inputCopies = document.querySelector('#copies');
+
+        btnMinus.addEventListener('click', function() {
+            let value = parseInt(inputCopies.value);
+            if (value > 1) {
+                value--;
+                inputCopies.value = value;
+            }
+        });
+
+        btnPlus.addEventListener('click', function() {
+            let value = parseInt(inputCopies.value);
+            if (value < 99) {
+                value++;
+                inputCopies.value = value;
+            }
+        });
+
+        // Agrega un controlador de eventos al cambio de selección
+        selectEdition.addEventListener('change', function() {
+            const selectedOption = selectEdition.options[selectEdition.selectedIndex];
+            const selectedPrice = parseFloat(selectedOption.getAttribute('data-price'));
+            gamePrice.textContent = '$' + selectedPrice.toFixed(2);
+        });
+    });
+</script>
 </html>

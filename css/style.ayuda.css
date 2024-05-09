@@ -1,0 +1,18 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav-item {
+    padding-right: 32px;
+}
+
+.navbar-brand {
+    img {
+        width: 192px;
+        height: 96px;
+        padding-bottom: 12px;
+        padding-top: 6px;
+    }
+}
+
