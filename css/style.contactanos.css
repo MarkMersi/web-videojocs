@@ -13,20 +13,20 @@
     padding-bottom: 12px;
 }
 
-.mt-5 {
-    h1 {
-        padding-bottom: 12px;
+.container {
+    p {
+        padding-bottom: 28px;
+        padding-top: 8px;
     }
-    p:first-of-type {
-        padding-bottom: 16px;
-    }
+}
+
+.row {
     .col-md-6 {
         h2 {
-            padding-bottom: 8px;
+            padding-bottom: 20px;
         }
         p {
-            padding-top: 8px;
-            padding-bottom: 2px;
+            padding: 0;
         }
     }
 }

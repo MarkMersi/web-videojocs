@@ -9,64 +9,55 @@
     <link rel="stylesheet" href="../../css/style.contactanos.css">
 </head>
 <body>
-
-<header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="../../index.html">Inicio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../view/contenido/catalogo.html">Catalogo</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Sobre nosotros
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Contactanos</a></li>
-                            <li><a class="dropdown-item" href="./help.html">Ayuda</a></li>
-                            <li><a class="dropdown-item" href="./faq.html">Preguntas frecuentes</a></li>
-                        </ul>
-                    </li>
-                </ul>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../../index.html"><img class="banner" src="../../img/logo/elytrix-banner.png"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../contenido/catalogo.html">Catalogo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./help.html">Ayuda</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-</header>
-
-<section class="container mt-5">
-    <h1>Contactanos</h1>
-    <p>¿Tienes alguna pregunta o comentario? ¡Estamos aquí para ayudarte!</p>
-    <div class="row">
-        <div class="col-md-6">
-            <h2>Información de Contacto</h2>
-            <p><strong>Dirección:</strong> Calle de Alcalá, 123, 28009 Madrid, España </p>
-            <p><strong>Teléfono:</strong> 333-333-333</p>
-            <p><strong>Correo electrónico:</strong>  Elytrix@gmail.com </p>
-        </div>
-        <div class="col-md-6">
-            <h2>Formulario de Contacto</h2>
-            <form>
-                <div class="mb-3">
-                    <label for="name" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="name" required>
+        </nav>
+    </header>
+    <section class="container mt-5">
+        <h1>Contactanos</h1>
+        <p>¿Tienes alguna pregunta o comentario? ¡Estamos aquí para ayudarte!</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Información de Contacto</h2>
+                    <p><strong>Dirección:</strong> Calle de Alcalá, 123, 28009 Madrid, España </p>
+                    <p><strong>Teléfono:</strong> 333-333-333</p>
+                    <p><strong>Correo electrónico:</strong>  Elytrix@gmail.com </p>
                 </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Correo Electrónico</label>
-                    <input type="email" class="form-control" id="email" required>
+                <div class="col-md-6">
+                    <h2>Formulario de Contacto</h2>
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                    </form>
                 </div>
-                <div class="mb-3">
-                    <label for="message" class="form-label">Mensaje</label>
-                    <textarea class="form-control" id="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
-            </form>
-        </div>
-    </div>
-</section>
+            </div>
+    </section>
 </body>
 </html>
